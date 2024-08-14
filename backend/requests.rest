@@ -1,0 +1,45 @@
+###
+POST http://localhost:8000/authentication/register
+Content-Type: application/json
+
+{
+    "fullname":"Maisha Shawrin Mahi",
+    "username":"kalapahar",
+    "email":"mahi123@gmail.com",
+    "password":"as I am 2024"
+}
+
+###
+POST http://localhost:8000/authentication/login
+Content-Type: application/json
+
+{
+    "username":"noir",
+    "password":"as I am 2024"
+}
+
+###
+POST http://localhost:8000/post/addPost
+Content-Type: application/json
+
+{
+    "title":"Just the second post",
+    "content":"Nothing to say, really",
+    "author":"66b9dffa3deaf603f9ed991a"
+}
+
+###
+GET http://localhost:8000/post/getPost/66b9eb553ce4645f02304e67 
+
+###
+PUT http://localhost:8000/post/updatePost
+Content-Type: application/json
+
+{
+    "id":"66b9eb553ce4645f02304e67",
+    "updatedPost":{
+        "title":"updated Title",
+        "content":"updated Content",
+        "author":"66b9dffa3deaf603f9ed991a"
+    }
+}
