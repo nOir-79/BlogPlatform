@@ -3,34 +3,39 @@ POST http://localhost:8000/authentication/register
 Content-Type: application/json
 
 {
-    "fullname":"Maisha Shawrin Mahi",
-    "username":"kalapahar",
-    "email":"mahi123@gmail.com",
-    "password":"as I am 2024"
+    "fullname":"Sadik Mahamud Shakshor",
+    "username":"shakshor",
+    "email":"shakshor123@gmail.com",
+    "password":"as I am 2024",
+    "role":"editor"
 }
+
+###
+GET http://localhost:8000/authentication/getUser/shakshor
 
 ###
 POST http://localhost:8000/authentication/login
 Content-Type: application/json
 
 {
-    "username":"noir",
+    "username":"shakshor",
     "password":"as I am 2024"
 }
 
 ###
 POST http://localhost:8000/post/addPost
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2YmM5YzI3NDVmYjNjODA1ZDk1ZGFjZSIsImZ1bGxuYW1lIjoiU2FkaWsgTWFoYW11ZCBTaGFrc2hvciIsInVzZXJuYW1lIjoic2hha3Nob3IiLCJlbWFpbCI6InNoYWtzaG9yMTIzQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEdPbmdGNUhTeDM5RVRUWG9PRkx2bmUuaEJNVTJkUER0OXY3MGNHZ1pUbW13V2VjMUhUcFJTIiwicm9sZSI6ImVkaXRvciIsIl9fdiI6MH0sImlhdCI6MTcyMzYzNjc5Mn0.bI-97rZvxwJaaXfmi9FoVDoKsI7I3E7A9S9KiaNv1WM
 Content-Type: application/json
 
 {
-    "title":"Just the second post",
+    "title":"Just the first post",
     "content":"Nothing to say, really",
-    "author":"66b9dffa3deaf603f9ed991a"
+    "author":"66bc9c2745fb3c805d95dace"
 }
 
 ###
-GET http://localhost:8000/post/getPost/66b9eb553ce4645f02304e67 
-
+GET http://localhost:8000/post/getPost/66bc966d8bddc170834a8635 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY2YmM5OWViMmJjNTg4NWRjOTJlMTZhNCIsImZ1bGxuYW1lIjoiTW91IE1vbiBKYWhhbmFyYSIsInVzZXJuYW1lIjoibW91IiwiZW1haWwiOiJtb3VAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkNGF3blBzTEwuMnFoeVQ0cGpCTEY5LnB3aG84M3dKQmRBQmp6ZjM2YmxBblZmcTVSNlF1UUciLCJyb2xlIjoiYWRtaW4iLCJfX3YiOjB9LCJpYXQiOjE3MjM2MzYyODd9.fSNRy96RfpDvY-LMoY55KS7Z6M0NNlX40DC9CEAYYyg
 ###
 PUT http://localhost:8000/post/updatePost
 Content-Type: application/json
@@ -43,3 +48,9 @@ Content-Type: application/json
         "author":"66b9dffa3deaf603f9ed991a"
     }
 }
+
+###
+DELETE http://localhost:8000/post/deletePost/66bc710c50554beb65c61cff
+
+###
+GET http://localhost:8000/post/showAllPosts
