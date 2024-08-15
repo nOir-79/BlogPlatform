@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 const app = express()
 const authenticationRouter = require('./routes/authenticationRoutes')
 const postRouter = require('./routes/postRoutes')
+const commentRouter = require('./routes/commentRoutes')
 
 app.use(express.json())
 mongoose.connect("mongodb://localhost/blogPlatform")
@@ -12,6 +13,7 @@ mongoose.connect("mongodb://localhost/blogPlatform")
 
 app.use('/authentication',authenticationRouter)
 app.use('/post',postRouter)
+app.use('/comments',commentRouter)
 app.get('/',(req,res)=>{
     res.send("Hello")
 })
