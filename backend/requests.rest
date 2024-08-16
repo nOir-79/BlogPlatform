@@ -3,15 +3,15 @@ POST http://localhost:8000/authentication/register
 Content-Type: application/json
 
 {
-    "fullname":"Sadik Mahamud Shakshor",
-    "username":"shakshor",
-    "email":"shakshor123@gmail.com",
+    "fullname":"Maisha Shawrin Mahi",
+    "username":"mahi",
+    "email":"mahi123@gmail.com",
     "password":"as I am 2024",
     "role":"user"
 }
 
 ###
-GET http://localhost:8000/authentication/getUser/shakshor
+GET http://localhost:8000/authentication/getUser/mahi
 ###
 POST http://localhost:8000/authentication/login
 Content-Type: application/json

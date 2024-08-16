@@ -7,7 +7,8 @@ const postRouter = require('./routes/postRoutes')
 const commentRouter = require('./routes/commentRoutes')
 
 app.use(express.json())
-mongoose.connect("mongodb://localhost/blogPlatform")
+const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/blogPlatform'
+mongoose.connect(mongoURI)
 
 
 
